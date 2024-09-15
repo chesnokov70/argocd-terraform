@@ -14,21 +14,6 @@ provider "helm" {
   }
 }
 
-#---------------------------------add--------------------------------
-
-resource "null_resource" "install_argo_cd_crds" {
-  provisioner "local-exec" {
-    command = "kubectl apply -f https://github.com/argoproj/argo-cd/blob/master/manifests/crds/application-crd.yaml"
-  }
-
-  # Optional: Add a trigger to re-run the provisioner if the CRD URL changes
-  triggers = {
-    crd_url = "https://github.com/argoproj/argo-cd/blob/master/manifests/crds/application-crd.yaml"
-  }
-}
-
-
-#--------------------------------------------------------------------
 
 resource "helm_release" "argocd" {
   name             = "argocd"
@@ -39,5 +24,3 @@ resource "helm_release" "argocd" {
   create_namespace = true
   values           = [file("${path.module}/argocd.yaml")]
 }
-
-
