@@ -11,17 +11,17 @@ kind: ClusterConfig
 metadata:
   name: demo-prod
   region: us-east-1
-  version: "1.27"
+  version: "1.30"
 
 vpc:
-  id: "vpc-0098d09eba11f8221"
+  id: "vpc-00a7ffe54fe448047"
   subnets:
     public:
-      us-east-1a: {id: subnet-0279fb8f95ee9cf41} # For Load Balancer
-      us-east-1b: {id: subnet-001f964b7450140bf} # For Load Balancer
+      us-east-1a: {id: subnet-002e06c8d029fcdc0} # For Load Balancer
+      us-east-1b: {id: subnet-0cf15a051aebd4c30} # For Load Balancer
     private:
-      us-east-1a: {id: subnet-0fbf72c6ab6bdd614} # For Master Node
-      us-east-1b: {id: subnet-0ee3a1d18e810b5dd} # For Master Node
+      us-east-1a: {id: subnet-0939d27a698365035} # For Master Node
+      us-east-1b: {id: subnet-09123e5cc6c551b80} # For Master Node
 
 managedNodeGroups:
 - name: general
@@ -35,3 +35,4 @@ managedNodeGroups:
   #ssh:
   #  allow: true # enables SSH access to the nodes.
   #  publicKeyName: ssh_new_aws_devops_key # your ssh key name
+
