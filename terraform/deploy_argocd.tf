@@ -12,6 +12,7 @@ module "argocd_prod" {
 }
 
 
+
 # Can be deployed ONLY after ArgoCD deployment: depends_on = [module.argocd_dev]
 module "argocd_dev_root" {
   source             = "./terraform_argocd_root_eks"
@@ -27,3 +28,4 @@ module "argocd_prod_root" {
   git_source_path    = "demo-prod/applications"
   git_source_repoURL = "git@github.com:chesnokov70/argocd.git"
 }
+
