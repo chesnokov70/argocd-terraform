@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name     : root
+  name: root
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name     : in-cluster
+    name: in-cluster
     namespace: argocd
   source:
-    path   : "demo-dev/applications"
-    repoURL: "git@github.com:adv4000/argocd.git"
+    path: "demo-dev/applications"
+    repoURL: "git@github.com:chesnokov70/argocd.git"
     targetRevision: HEAD
   project: default
   syncPolicy:
     automated:
-      prune   : true
+      prune: true
       selfHeal: true
-      
+
